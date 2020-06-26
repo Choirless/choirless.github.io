@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Choirless - Development Mini-site</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Choirless</h1>
+        <p class="lead">A musical collaboration project for disconnected performers</p>
+      </div>
+
+      <div class="container">
+        <h2>Introduction</h2>
+        <p>
+          Choirless is a musical collaboration platform built to enter <a href="https://callforcode.org/">Call for Code 2020</a>. 
+          It allows music groups to create a video wall recording of a piece of music, where all of the
+          individual submissions are captured separately on the performer's phone, tablet or laptop. 
+        </p>
+        <p>
+          Choirless came about during the 2020 Covid-19 Pandemic, as countries went into prolonged lockdown
+          and social distancing prevented choirs, bands and other musical ensembles from meeting in and 
+          performing in person. Video meeting platforms such as Zoom and WebEx proved useless for live
+          collaboration because of the network latency and the audio being optimised for speech.
+        </p>
+        <h2>Who are we?</h2>
+        <p>The Choirless Crew consist of three IBMers:
+          <ul>
+            <li><a href="https://twitter.com/HammerToe">Matt Hamilton</a></li>
+            <li><a href="https://twitter.com/seanmtracey">Sean Tracey</a></li>
+            <li><a href="https://twitter.com/glynn_bird">Glynn Bird</a></li>
+          </ul>
+        </p>
+        <h2>How does it work?</h2>
+        Choirless consists of a number of microservices and cloud services working together:
+
+        <img class="img-responsive" src="assets/img/schematic.png" />
+
+        <ol>
+          <li><a href="https://github.com/Choirless/Application-Server">The Application Server</a> powers the 
+          Choirless front-end website. It is built with HTML and vanilla JavaScript and is deployed using
+          Cloud Foundry in the IBM Cloud</li>
+          <li><a href="https://github.com/Choirless/choirlessapi">The Choirless API</a> is a RESTful API service
+          written in Node.js which stores its state in a Cloudant JSON document store.</li>
+          <li><a href="https://github.com/Choirless/renderer">The Renderer</a> is a collection of Python 
+          and Node.js serverless actions that run in the IBM Cloud Functions framework. They are triggered
+          by objects arriving in Cloud Object Storage and from user-driven events. Each action performs a 
+          specific audio/video processing job, such as resizing video or creating montages of multiple 
+          video sources.</li>
+          <li><a href="https://github.com/Choirless/boxjam">Boxjam</a> is a Node.js module that fits 
+          many rectangles into another rectangle - useful if you're creating video montages of videos
+          that are of various sizes and orientations.</li>
+          <li><a href="https://github.com/Choirless/Stitcheroo">Stitcheroo</a> is a Node.js module that fits 
+          many combines multiple videos sources into an output montage. It can also process the 
+          audio tracks for stereo spread and reverberation ambience.</li>
+        </ol>
+
+        <h2>How can I try it?</h2>
+        Simpy visit <a src="https://choirless.com">choirless.com</a> and sign up for an account.
+
+        <h2>Open source</h2>
+        All of our source code is <a href="https://github.com/Choirless">open-sourced under the MIT 
+        license on GitHub</a>.
+
+        <hr>
+        &copy; Choirless 2020
+      </div>
+    </div>
+ </body>
+</html>
+
