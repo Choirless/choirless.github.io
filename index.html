@@ -67,6 +67,13 @@
           audio tracks for stereo spread and reverberation ambience.</li>
         </ol>
 
+        <h2>The Rendering Process</h2>
+
+        The Rendering service is a mulit-step process, where each step is triggered by the arrival of an
+        object in a COS bucket. Some actions are taken in parallel to speed up the process:
+
+        <img class="img-responsive" src="assets/img/renderer.png" />
+
         <h2>How can I try it?</h2>
         Simpy visit <a href="https://www.choirless.com">choirless.com</a> and sign up for an account.
 
