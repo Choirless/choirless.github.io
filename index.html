@@ -22,6 +22,10 @@
           individual submissions are captured separately on the performers' phone, tablet or laptop. 
         </p>
         <p>
+          The core technology that powers Choirless has been released as a Call for Code with The Linux Foundation project named
+          <a href="https://github.com/Rend-o-matic/Rend-o-matic">Rend-o-matic</a>. 
+        </p>
+        <p>
           Choirless came about during the 2020 Covid-19 Pandemic, as countries went into lockdown
           and social-distancing prevented choirs, bands and other musical ensembles from meeting and 
           performing in person. Video meeting platforms such as Zoom and WebEx proved useless for live
@@ -48,21 +52,26 @@
 
         <img class="img-responsive" src="assets/img/schematic.png" />
 
+        <h3>Choirless components</h3>
         <ol>
           <li><a href="https://github.com/Choirless/Application-Server">The Application Server</a> powers the 
           Choirless front-end website. It is built with HTML and vanilla JavaScript and is deployed using
           Cloud Foundry in the IBM Cloud</li>
           <li><a href="https://github.com/Choirless/choirlessapi">The Choirless API</a> is a RESTful API service
           written in Node.js which stores its state in a Cloudant JSON document store.</li>
-          <li><a href="https://github.com/Choirless/renderer">The Renderer</a> is a collection of Python 
+        </ol>
+
+        <h3>Rend-o-matic components</h3>
+        <ol>
+          <li><a href="https://github.com/Rend-o-matic/renderer">The Renderer</a> is a collection of Python 
           and Node.js serverless actions that run in the IBM Cloud Functions framework. They are triggered
           by objects arriving in Cloud Object Storage and from user-driven events. Each action performs a 
           specific audio/video processing job, such as resizing video or creating montages of multiple 
           video sources.</li>
-          <li><a href="https://github.com/Choirless/boxjam">Boxjam</a> is a Node.js module that fits 
+          <li><a href="https://github.com/Rend-o-matic/boxjam">Boxjam</a> is a Node.js module that fits 
           many rectangles into another rectangle - useful if you're creating video montages of videos
           that are of various sizes and orientations.</li>
-          <li><a href="https://github.com/Choirless/Stitcheroo">Stitcheroo</a> is a Node.js module that fits 
+          <li><a href="https://github.com/Rend-o-matic/Stitcheroo">Stitcheroo</a> is a Node.js module that fits 
           many combines multiple videos sources into an output montage. It can also process the 
           audio tracks for stereo spread and reverberation ambience.</li>
         </ol>
@@ -75,7 +84,9 @@
         <img class="img-responsive" src="assets/img/renderer.png" />
 
         <h2>How can I try it?</h2>
-        Simpy visit <a href="https://www.choirless.com">choirless.com</a> and sign up for an account.
+        Simpy visit <a href="https://www.choirless.com">Choirless.com</a> and sign up for an account. Or, check
+        out the <a href="https://github.com/Rend-o-matic">Rend-o-matic GitHub organisation</a> to explore the 
+        underlying engine that powers Choirless.
 
         <h2>Open source</h2>
         All of our source code is <a href="https://github.com/Choirless">open-sourced under the MIT 
